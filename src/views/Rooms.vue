@@ -26,12 +26,12 @@
               </v-img>
 
               <v-card-actions >
-                <v-btn color="#b71c1c" outlined>
+                <v-btn color="#b71c1c" outlined to="/reservations">
                   <span>Reserve</span>
                 </v-btn>
 <!--                <v-spacer></v-spacer>-->
 
-                <v-btn color="#b71c1c" outlined>
+                <v-btn color="#b71c1c" outlined :to="card.link">
                   <span>Details</span>
                 </v-btn>
               </v-card-actions>
@@ -51,17 +51,20 @@ export default {
       {
         title: "Two Queen Beds",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-        flex: 4
+        flex: 4,
+        link: "/queens"
       },
       {
         title: "Kitchenette with Sofa",
         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-        flex: 4
+        flex: 4,
+        link: "/kitchenette"
       },
       {
         title: "Two Double Beds (Pet Friendly)",
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-        flex: 4
+        flex: 4,
+        link: "/double"
       }
     ]
   })

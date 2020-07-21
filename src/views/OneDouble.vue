@@ -4,7 +4,7 @@
       <v-col :cols="4" align="center">
         <v-img src="../assets/images/test3.png" alt="" max-width="350"></v-img>
         <div class="introText text-h6 mt-4 font-weight-black">
-          Kitchenette With Sofa
+          One Double
         </div>
       </v-col>
     </v-row>
@@ -24,7 +24,7 @@
       <v-col :cols="8" class="my-5">
         <div class="text-h4 pb-5 font-weight-black">Details</div>
         <div class="text-h6 my-5">
-          One queen size bed. This room features a small kitchen facility with eating area and living room space with a queen pullout couch. Spacious work desk with ergonomic working chair, coffee maker, iron and ironing board, blow dryer, flat screen TV. Maximum occupancy is 4 people. Non smoking or smoking rooms available.
+          One double bed standard room features mini fridge, spacious work desk with ergonomic working chair, phone, coffee maker, iron and ironing board, blow dryer, flat screen TV. Maximum occupancy is 2 people. Non smoking or smoking rooms available.
         </div>
       </v-col>
     </v-row>
@@ -33,14 +33,14 @@
 
 <script>
 export default {
-  name: "Kitchenette",
+  name: "OneDouble",
   data: () => ({
     items: [
       {
-        src: require("../assets/images/Kitchenette.jpg")
+        src: require("../assets/images/Room1.jpg")
       },
       {
-        src: require("../assets/images/Room1.jpg")
+        src: require("../assets/images/Kitchenette.jpg")
       }
     ]
   })

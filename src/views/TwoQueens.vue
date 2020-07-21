@@ -16,7 +16,7 @@
           :src="item.src"
         ></v-carousel-item>
       </v-carousel>
-      <v-btn color="#b71c1c" class="mt-n5 ml-auto mr-6" dark rounded large>
+      <v-btn color="#b71c1c" class="mt-n5 ml-auto mr-6" dark rounded large to="/reservations">
         <span>Reserve</span>
       </v-btn>
     </v-row>
@@ -41,13 +41,10 @@ export default {
   data: () => ({
     items: [
       {
-        src: require("../assets/images/home.jpg")
-      },
-      {
-        src: require("../assets/images/Home2.jpg")
-      },
-      {
         src: require("../assets/images/Room1.jpg")
+      },
+      {
+        src: require("../assets/images/Kitchenette.jpg")
       }
     ]
   })

@@ -9,7 +9,7 @@ import Contact from "../views/Contact";
 import Bookings from "../views/Bookings";
 import Reservations from "../views/Reservations";
 import TwoQueens from "../views/TwoQueens";
-import TwoDoubles from "../views/TwoDoubles";
+import OneDouble from "../views/OneDouble";
 import Kitchenette from "../views/Kitchenette";
 
 Vue.use(VueRouter);
@@ -61,9 +61,9 @@ const routes = [
     component: TwoQueens
   },
   {
-    path: "/doubles",
-    name: "TwoDoubles",
-    component: TwoDoubles
+    path: "/double",
+    name: "OneDoubles",
+    component: OneDouble
   },
   {
     path: "/kitchenette",
