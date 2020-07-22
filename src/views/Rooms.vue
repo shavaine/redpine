@@ -6,11 +6,6 @@
         <div class="introText text-h6 mt-4 font-weight-black">Rooms</div>
       </v-col>
     </v-row>
-    <!--    <v-row>-->
-    <!--      <v-col></v-col>-->
-    <!--      <v-col></v-col>-->
-    <!--      <v-col></v-col>-->
-    <!--    </v-row>-->
     <v-row class="grey lighten-1 pa-3">
       <v-container fluid>
         <v-row>
@@ -26,12 +21,12 @@
               </v-img>
 
               <v-card-actions >
-                <v-btn color="#b71c1c" outlined to="/reservations">
+                <v-btn color="white" outlined to="/reservations">
                   <span>Reserve</span>
                 </v-btn>
 <!--                <v-spacer></v-spacer>-->
 
-                <v-btn color="#b71c1c" outlined :to="card.link">
+                <v-btn color="white" outlined :to="card.link">
                   <span>Details</span>
                 </v-btn>
               </v-card-actions>

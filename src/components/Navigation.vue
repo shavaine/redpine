@@ -2,31 +2,36 @@
   <nav>
     <v-app-bar app elevation="1" scroll-threshold="500" :color="navcolor">
       <v-app-bar-nav-icon
-        class="grey--text"
+        :color="tabcolor"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase white--text">
-        <v-img src="../assets/images/test3.png" alt="" max-width="200" v-if="navcolor !== '#7f0000'" class="mr-4"></v-img>
+        <v-img
+          src="../assets/images/test3.png"
+          alt=""
+          max-width="200"
+          v-if="navcolor !== '#7f0000'"
+          class="mr-4"
+        ></v-img>
       </v-toolbar-title>
       <v-button-toggle>
-        <v-btn text color="grey" to="/">Home</v-btn>
-        <v-btn text color="grey" to="/rooms">Rooms</v-btn>
-        <v-btn text color="grey" to="/amenities">Amenities</v-btn>
-        <v-btn text color="grey" to="/meetings">Meetings & Events</v-btn>
-        <v-btn text color="grey" to="/things">Things To Do</v-btn>
-        <v-btn text color="grey" to="/contact">Contact</v-btn>
+        <v-btn text :color="tabcolor" to="/">Home</v-btn>
+        <v-btn text :color="tabcolor" to="/rooms">Rooms</v-btn>
+        <v-btn text :color="tabcolor" to="/amenities">Amenities</v-btn>
+        <v-btn text :color="tabcolor" to="/meetings">Meetings & Events</v-btn>
+        <v-btn text :color="tabcolor" to="/things">Things To Do</v-btn>
+        <v-btn text :color="tabcolor" to="/contact">Contact</v-btn>
       </v-button-toggle>
-
       <v-spacer></v-spacer>
 
       <v-divider class="mx-2" vertical></v-divider>
-      <v-btn text color="grey">
+      <v-btn text :color="tabcolor">
         <span>Reserve</span>
       </v-btn>
       <v-divider class="mx-2" vertical></v-divider>
-      <v-icon right>mdi-email</v-icon>
+      <v-icon right :color="tabcolor">mdi-email</v-icon>
       <v-divider class="mx-4" vertical></v-divider>
-      <v-icon right class="mr-4">mdi-phone</v-icon>
+      <v-icon right :color="tabcolor" class="mr-4">mdi-phone</v-icon>
       <v-divider vertical></v-divider>
     </v-app-bar>
 
@@ -62,6 +67,7 @@ export default {
     drawer: false,
     scrollPosition: null,
     navcolor: "#7f0000",
+    tabcolor: "#FFF9C4",
     links: [
       { icon: "mdi-home-city", text: "Home", route: "/" },
       { icon: "mdi-room-service", text: "Rooms", route: "/rooms" },
@@ -81,9 +87,16 @@ export default {
       this.scrollPosition = window.scrollY;
     },
     navCurrent() {
-      this.scrollPosition > 200
-        ? this.navcolor = "grey lighten-3"
-        : this.navcolor = "#7f0000";
+      // this.scrollPosition > 200
+      //   ? this.navcolor = "grey lighten-3"
+      //   : this.navcolor = "#7f0000";
+      if (this.scrollPosition > 200) {
+        this.navcolor = "grey lighten-3";
+        this.tabcolor = "grey";
+      } else {
+        this.navcolor = "#7f0000";
+        this.tabcolor = "#FFF9C4";
+      }
     }
   },
   mounted() {
