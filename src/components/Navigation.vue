@@ -25,7 +25,7 @@
       <v-spacer></v-spacer>
 
       <v-divider class="mx-2" vertical></v-divider>
-      <v-btn text :color="tabcolor">
+      <v-btn text :color="tabcolor" to="/reservations">
         <span>Reserve</span>
       </v-btn>
       <v-divider class="mx-2" vertical></v-divider>

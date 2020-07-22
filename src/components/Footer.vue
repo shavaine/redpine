@@ -13,7 +13,7 @@
     <!--        </v-btn>-->
     <!--      </v-card-title>-->
     <!--    </v-card>-->
-    <v-container fluid class="footer-color ">
+    <v-container fluid class="footer-color py-8">
       <v-row justify="center" class="footer-text">
         <v-col :cols="4">Red Pine Inn Alliston</v-col>
         <v-col :cols="4"

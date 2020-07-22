@@ -6,25 +6,25 @@
         <div class="introText text-h6 mt-4 font-weight-black">Rooms</div>
       </v-col>
     </v-row>
-    <v-row class="grey lighten-1 pa-3">
+    <v-row class="grey lighten-1 pa-3 room-sec" align-content="center">
       <v-container fluid>
-        <v-row>
+        <v-row justify="center">
           <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
             <v-card color="#363636">
               <v-img
                 :src="card.src"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="200px"
+                height="250px"
               >
                 <v-card-title v-text="card.title"></v-card-title>
               </v-img>
 
-              <v-card-actions >
+              <v-card-actions>
                 <v-btn color="white" outlined to="/reservations">
                   <span>Reserve</span>
                 </v-btn>
-<!--                <v-spacer></v-spacer>-->
+                <!--                <v-spacer></v-spacer>-->
 
                 <v-btn color="white" outlined :to="card.link">
                   <span>Details</span>
@@ -46,19 +46,19 @@ export default {
       {
         title: "Two Queen Beds",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-        flex: 4,
+        flex: 3,
         link: "/queens"
       },
       {
         title: "Kitchenette with Sofa",
         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-        flex: 4,
+        flex: 3,
         link: "/kitchenette"
       },
       {
-        title: "Two Double Beds (Pet Friendly)",
+        title: "One Double Bed (Pet Friendly)",
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-        flex: 4,
+        flex: 3,
         link: "/double"
       }
     ]
@@ -69,5 +69,8 @@ export default {
 <style scoped>
 .introText {
   color: #7f0000;
+}
+.room-sec {
+  height: 425px;
 }
 </style>

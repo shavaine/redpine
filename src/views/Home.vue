@@ -17,7 +17,7 @@
         ></v-carousel-item>
       </v-carousel>
     </v-row>
-    <v-row class="grey lighten-1 py-3" justify="center">
+    <v-row class="grey lighten-1 py-8" justify="center">
       <v-col :cols="8" class="my-5">
         <div class="text-h4 pb-5 font-weight-black">About Us</div>
         <div class="text-h6 my-5">
