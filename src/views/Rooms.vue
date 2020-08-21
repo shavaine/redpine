@@ -1,34 +1,43 @@
 <template>
   <v-container class="homepage py-0" fluid>
-    <v-row class="grey lighten-3 py-10" justify="center">
-      <v-col :cols="4" align="center">
-        <v-img src="../assets/images/test3.png" alt="" max-width="350"></v-img>
-        <div class="introText text-h6 mt-4 font-weight-black">Rooms</div>
-      </v-col>
+<!--    Banner-->
+    <v-row class="grey lighten-3 banner hero-image" justify="center" align-content="center">
+      <v-row
+              class="fill-height caro-gradient "
+              align="center"
+              justify="center"
+      >
+        <div class="display-2 font-weight-medium white--text"> Rooms</div>
+      </v-row>
     </v-row>
-    <v-row class="grey lighten-1 pa-3 room-sec" align-content="center">
-      <v-container fluid>
-        <v-row justify="center">
-          <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-            <v-card color="#363636">
+<!--    banner-->
+    <v-row class="grey lighten-1 pa-3 room-sec" align-content="center" >
+      <v-container fluid class="my-5">
+        <v-row justify="center" >
+          <v-col v-for="card in cards" :key="card.title" :cols="card.flex" >
+            <v-card color="grey" class="pa-5">
               <v-img
                 :src="card.src"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="250px"
               >
-                <v-card-title v-text="card.title"></v-card-title>
+
               </v-img>
-
+              <v-card-title class="justify-center card-color pb-0" v-text="card.title"></v-card-title>
               <v-card-actions>
-                <v-btn color="white" outlined to="/reservations">
-                  <span>Reserve</span>
-                </v-btn>
-                <!--                <v-spacer></v-spacer>-->
+                <v-row dense>
+                  <v-col :cols="6"> <v-btn class="font-weight-light" block color="#7f0000" outlined to="/reservations">
+                    <span>Reserve</span>
+                  </v-btn></v-col>
+                  <v-col :cols="6"><v-btn class="font-weight-light" block color="#7f0000" outlined :to="card.link">
+                    <span>Details</span>
+                  </v-btn></v-col>
+                </v-row>
 
-                <v-btn color="white" outlined :to="card.link">
-                  <span>Details</span>
-                </v-btn>
+<!--                                <v-spacer></v-spacer>-->
+
+
               </v-card-actions>
             </v-card>
           </v-col>
@@ -67,10 +76,25 @@ export default {
 </script>
 
 <style scoped>
-.introText {
+.room-sec {
+  height: 575px;
+}
+.banner {
+  height: 250px;
+}
+.hero-image {
+  background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 250px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.card-color {
   color: #7f0000;
 }
-.room-sec {
-  height: 425px;
+.caro-gradient{
+  background: rgb(46,41,41);
+  background: linear-gradient(90deg, rgba(46,41,41,0.6362920168067228) 100%, rgba(46,41,41,1) 100%, rgba(46,41,41,1) 100%);
 }
 </style>

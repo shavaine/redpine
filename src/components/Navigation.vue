@@ -5,7 +5,7 @@
         :color="tabcolor"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-uppercase white--text">
+      <v-toolbar-title class="text-capitalize white--text">
         <v-img
           src="../assets/images/test3.png"
           alt=""
@@ -15,12 +15,12 @@
         ></v-img>
       </v-toolbar-title>
       <v-button-toggle>
-        <v-btn text :color="tabcolor" to="/">Home</v-btn>
-        <v-btn text :color="tabcolor" to="/rooms">Rooms</v-btn>
-        <v-btn text :color="tabcolor" to="/amenities">Amenities</v-btn>
-        <v-btn text :color="tabcolor" to="/meetings">Meetings & Events</v-btn>
-        <v-btn text :color="tabcolor" to="/things">Things To Do</v-btn>
-        <v-btn text :color="tabcolor" to="/contact">Contact</v-btn>
+        <v-btn text :color="tabcolor" class="text-capitalize" to="/">Home</v-btn>
+        <v-btn text :color="tabcolor" class="text-capitalize" to="/rooms">Rooms</v-btn>
+        <v-btn text :color="tabcolor" class="text-capitalize" to="/amenities">Amenities</v-btn>
+        <v-btn text :color="tabcolor" class="text-capitalize" to="/meetings">Meetings & Events</v-btn>
+        <v-btn text :color="tabcolor" class="text-capitalize" to="/things">Things To Do</v-btn>
+        <v-btn text :color="tabcolor" class="text-capitalize" to="/contact">Contact</v-btn>
       </v-button-toggle>
       <v-spacer></v-spacer>
 
@@ -66,8 +66,8 @@ export default {
   data: () => ({
     drawer: false,
     scrollPosition: null,
-    navcolor: "#7f0000",
-    tabcolor: "#FFF9C4",
+    navcolor: "grey lighten-3",
+    tabcolor: "#7f0000",
     links: [
       { icon: "mdi-home-city", text: "Home", route: "/" },
       { icon: "mdi-room-service", text: "Rooms", route: "/rooms" },
@@ -82,27 +82,24 @@ export default {
       { icon: "mdi-notebook", text: "Book Room", route: "/reservations" }
     ]
   }),
-  methods: {
-    updateScroll() {
-      this.scrollPosition = window.scrollY;
-    },
-    navCurrent() {
-      // this.scrollPosition > 200
-      //   ? this.navcolor = "grey lighten-3"
-      //   : this.navcolor = "#7f0000";
-      if (this.scrollPosition > 200) {
-        this.navcolor = "grey lighten-3";
-        this.tabcolor = "grey";
-      } else {
-        this.navcolor = "#7f0000";
-        this.tabcolor = "#FFF9C4";
-      }
-    }
-  },
-  mounted() {
-    window.addEventListener("scroll", this.updateScroll);
-    window.addEventListener("scroll", this.navCurrent);
-  }
+  // methods: {
+  //   updateScroll() {
+  //     this.scrollPosition = window.scrollY;
+  //   },
+  //   navCurrent() {
+  //     if (this.scrollPosition > 200) {
+  //       this.navcolor = "grey lighten-3";
+  //       this.tabcolor = "#7f0000";
+  //     } else {
+  //       this.navcolor = "#7f0000";
+  //       this.tabcolor = "#FFF9C4";
+  //     }
+  //   }
+  // },
+  // mounted() {
+  //   window.addEventListener("scroll", this.updateScroll);
+  //   window.addEventListener("scroll", this.navCurrent);
+  // }
 };
 </script>
 

@@ -1,29 +1,29 @@
 <template>
   <v-container class="homepage py-0" fluid>
-    <v-row class="grey lighten-3 py-10" justify="center">
-      <v-col :cols="4" align="center">
-        <v-img src="../assets/images/test3.png" alt="" max-width="350"></v-img>
-        <div class="introText text-h6 mt-4 font-weight-black">
-          Two Queens
-        </div>
+    <!--    Banner-->
+    <v-row class="grey lighten-3 banner hero-image" justify="center" align-content="center">
+      <v-row
+              class="fill-height caro-gradient "
+              align="center"
+              justify="center"
+      >
+        <div class="display-2 font-weight-medium white--text">Two Queens</div>
+      </v-row>
+    </v-row>
+    <!--    banner-->
+    <v-row class="grey lighten-1 py-16" justify="center">
+      <v-col :cols="4" class="py-9" >
+        <v-carousel hide-delimiters>
+          <v-carousel-item
+                  v-for="(item, i) in items"
+                  :key="i"
+                  :src="item.src"
+          ></v-carousel-item>
+        </v-carousel>
       </v-col>
-    </v-row>
-    <v-row class="grey lighten-1">
-      <v-carousel hide-delimiters>
-        <v-carousel-item
-          v-for="(item, i) in items"
-          :key="i"
-          :src="item.src"
-        ></v-carousel-item>
-      </v-carousel>
-      <v-btn color="#b71c1c" class="mt-n5 ml-auto mr-6" dark rounded large to="/reservations">
-        <span>Reserve</span>
-      </v-btn>
-    </v-row>
-    <v-row class="grey lighten-1 py-3" justify="center">
-      <v-col :cols="8" class="my-5">
-        <div class="text-h4 pb-5 font-weight-black">Details</div>
-        <div class="text-h6 my-5">
+      <v-col :cols="4" class="pa-10" align-self="center">
+        <div class="text-h5 font-weight-bold">Details</div>
+        <div class="text-h6 my-5 font-weight-light">
           Two queen size beds located in our 2 storey building (internal
           access). This deluxe room features mini fridge, spacious work desk
           with ergonomic working chair, phone, coffee maker, blow dryer, iron
@@ -52,7 +52,19 @@ export default {
 </script>
 
 <style scoped>
-.introText {
-  color: #7f0000;
-}
+  .banner {
+    height: 250px;
+  }
+  .hero-image {
+    background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 250px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  .caro-gradient{
+    background: rgb(46,41,41);
+    background: linear-gradient(90deg, rgba(46,41,41,0.6362920168067228) 100%, rgba(46,41,41,1) 100%, rgba(46,41,41,1) 100%);
+  }
 </style>
