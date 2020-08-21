@@ -15,14 +15,13 @@
       <v-container fluid class="my-5">
         <v-row justify="center" >
           <v-col v-for="card in cards" :key="card.title" :cols="card.flex" >
-            <v-card color="grey" class="pa-5">
+            <v-card color="grey" class="pa-5 rounded-lg">
               <v-img
                 :src="card.src"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="250px"
               >
-
               </v-img>
               <v-card-title class="justify-center card-color pb-0" v-text="card.title"></v-card-title>
               <v-card-actions>

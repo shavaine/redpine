@@ -50,7 +50,7 @@
       <v-container fluid>
         <v-row justify="center">
           <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-            <v-card color="grey lighten-1" class="pa-3">
+            <v-card color="grey lighten-1" class="pa-3 rounded-xl">
               <v-card-title v-text="card.title"></v-card-title>
               <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
               <v-card-actions class="pa-0"> </v-card-actions>

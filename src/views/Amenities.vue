@@ -11,6 +11,7 @@
       </v-row>
     </v-row>
     <!--    banner-->
+<!--    General Amenities-->
     <v-row>
       <v-container fluid class="footer-color text-center ">
         <div class="text-h5 amenityText my-3">General Amenities</div>
@@ -76,59 +77,51 @@
         </v-row>
       </v-container>
     </v-row>
-    <v-row class="grey lighten-1 pa-3 Major-amenities" align-content="center">
-      <v-container fluid>
-        <v-row justify="center">
-          <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-            <v-card color="#363636" dark>
-              <v-img
-                :src="card.src"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="250px"
-              >
-              </v-img>
-              <v-card-actions class="pa-0">
-                <v-btn color="#b71c1c" class="mt-n5 ml-auto mr-5" dark rounded to="/">
-                  <span class="text-subtitle-2">Gallery</span>
-                </v-btn>
-              </v-card-actions>
-              <v-card-title v-text="card.title" class="pt-0"></v-card-title>
-              <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
-              <v-card-text v-text="card.text"></v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+
+    <v-row class="grey lighten-1 py-16" justify="center" align="center" no-gutters>
+      <v-col :cols="4" class="py-9" >
+        <v-img src="../assets/images/Pool2.jpg"></v-img>
+      </v-col>
+      <v-col :cols="4" class="ml-n8" >
+        <v-card color="grey" class="card-color" dark>
+          <v-card-title class="justify-center card-color">Indoor Pool</v-card-title>
+          <v-card-subtitle class=" text-center card-color"><div class="card-color subtitle-2">Salt Water</div></v-card-subtitle>
+          <v-card-text color="red" class="justify-center px-16 " >
+            <div class="card-color subtitle-2">Locker rooms, complimentary towel service, showers and hairdryer, water station. The pool area is unsupervised, children under the age of 16 are prohibited to enter the Fitness Centre.</div>
+          </v-card-text>
+          <v-card-actions class="justify-center pb-5">
+            <v-btn color="#7f0000" dark rounded outlined to="/">
+              <span class="text-capitalize mx-5">Gallery</span>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row class="grey lighten-1 py-16" justify="center" align="center" no-gutters>
+      <v-col :cols="4" class="front mr-n8" >
+        <v-card color="grey" class="card-color" dark>
+          <v-card-title class="justify-center card-color">Fitness Facility</v-card-title>
+          <v-card-subtitle class=" text-center card-color"><div class="card-color subtitle-2">Free Weights / Machines</div></v-card-subtitle>
+          <v-card-text color="red" class="justify-center px-16 " >
+            <div class="card-color subtitle-2">Open concept exercise area for those who wish to work out. We have the following equipment: stationary bicycles, stair master, free weights, elliptical machines, and treadmills.</div>
+          </v-card-text>
+          <v-card-actions class="justify-center pb-5">
+            <v-btn color="#7f0000" dark rounded outlined to="/">
+              <span class="text-capitalize mx-5">Gallery</span>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+      <v-col :cols="4" class="py-9" >
+        <v-img src="../assets/images/dumbells.jpg"></v-img>
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "Amenities",
-  data: () => ({
-    cards: [
-      {
-        title: "Indoor Pool",
-        subtitle: "Salt Water",
-        text:
-          "Locker rooms, complimentary towel service, showers and hairdryer, water station. The pool area is unsupervised, children under the age of 16 are prohibited to enter the Fitness Centre.",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-        flex: 4,
-        link: "/queens"
-      },
-      {
-        title: "Fitness Facility",
-        subtitle: "Free Weights / Machines",
-        text:
-          "Open concept exercise area for those who wish to work out. We have the following equipment: stationary bicycles, stair master, free weights, elliptical machines, and treadmills",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-        flex: 4,
-        link: "/kitchenette"
-      }
-    ]
-  })
+  name: "Amenities"
 };
 </script>
 
@@ -157,6 +150,12 @@ export default {
 .amenityIcon {
   color: #b71c1c;
 }
+  .card-color {
+    color: #7f0000;
+  }
+  .front {
+    z-index: 2;
+  }
 /*.Major-amenities {*/
 /*  height: 425px;*/
 /*}*/
