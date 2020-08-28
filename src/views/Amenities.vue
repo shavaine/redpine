@@ -11,7 +11,7 @@
       </v-row>
     </v-row>
     <!--    banner-->
-<!--    General Amenities-->
+    <!--    General Amenities-->
     <v-row>
       <v-container fluid class="footer-color text-center ">
         <div class="text-h5 amenityText my-3">General Amenities</div>
@@ -77,12 +77,16 @@
         </v-row>
       </v-container>
     </v-row>
+    <!--    General Amenities-->
+    <v-row class="grey lighten-2" justify="center">
 
-    <v-row class="grey lighten-1 py-16" justify="center" align="center" no-gutters>
+    </v-row>
+
+    <v-row class="grey lighten-1 py-16" justify="center" align="center">
       <v-col :cols="4" class="py-9" >
         <v-img src="../assets/images/Pool2.jpg"></v-img>
       </v-col>
-      <v-col :cols="4" class="ml-n8" >
+      <v-col :cols="4" class="ml-n14" >
         <v-card color="grey" class="card-color" dark>
           <v-card-title class="justify-center card-color">Indoor Pool</v-card-title>
           <v-card-subtitle class=" text-center card-color"><div class="card-color subtitle-2">Salt Water</div></v-card-subtitle>
@@ -97,8 +101,9 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row class="grey lighten-1 py-16" justify="center" align="center" no-gutters>
-      <v-col :cols="4" class="front mr-n8" >
+
+    <v-row class="grey lighten-1 py-16" justify="center" align="center">
+      <v-col :cols="4" class="front mr-n14" >
         <v-card color="grey" class="card-color" dark>
           <v-card-title class="justify-center card-color">Fitness Facility</v-card-title>
           <v-card-subtitle class=" text-center card-color"><div class="card-color subtitle-2">Free Weights / Machines</div></v-card-subtitle>

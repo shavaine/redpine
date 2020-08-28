@@ -89,11 +89,11 @@ export default {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
-.card-color {
-  color: #7f0000;
-}
 .caro-gradient{
   background: rgb(46,41,41);
   background: linear-gradient(90deg, rgba(46,41,41,0.6362920168067228) 100%, rgba(46,41,41,1) 100%, rgba(46,41,41,1) 100%);
+}
+.card-color {
+  color: #7f0000;
 }
 </style>
