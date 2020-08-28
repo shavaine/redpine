@@ -82,7 +82,7 @@
             ></v-col>
           </v-row>
           <v-row justify="center" >
-            <v-btn color="#b71c1c" class="mb-n5 mr-6 text-center"  dark rounded large to="/reservations">
+            <v-btn color="#b71c1c" class="mb-n5 mr-6 text-center"  dark rounded large to="/contact">
               <span>Contact For More Info</span>
             </v-btn>
           </v-row>

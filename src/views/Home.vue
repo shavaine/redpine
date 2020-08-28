@@ -12,7 +12,15 @@
                   align="center"
                   justify="center"
           >
-            <div class="display-2 font-weight-light"> Comfortable Stay<br> The Alliston Way</div>
+            <div class="display-2 font-weight-light text-center">
+              <span>Comfortable Stay</span>
+              <br>
+              <span>The Alliston Way</span>
+              <br>
+              <v-btn color="#7f0000" to="/reservations" dark rounded>
+                <span class="text-capitalize mx-5 ">Book Now</span>
+              </v-btn>
+            </div>
           </v-row>
         </v-carousel-item>
       </v-carousel>
@@ -37,14 +45,7 @@
         <v-img src="https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></v-img>
       </v-col>
     </v-row>
-<!--    <v-row class="grey lighten-2 py-16" justify="center">-->
-<!--      <v-row></v-row>-->
-<!--      <v-row>-->
-<!--        <v-col :cols="3"></v-col>-->
-<!--        <v-col :cols="3"></v-col>-->
-<!--        <v-col :cols="3"></v-col>-->
-<!--      </v-row>-->
-<!--    </v-row>-->
+
     <v-row class="grey lighten-2 pa-8 pb-16 Major-amenities" align-content="center" justify="center">
       <div class="text-h4 font-italic font-weight-light mb-4 mt-16">Recent News</div>
       <v-container fluid>

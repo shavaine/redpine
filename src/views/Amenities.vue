@@ -77,10 +77,6 @@
         </v-row>
       </v-container>
     </v-row>
-    <!--    General Amenities-->
-    <v-row class="grey lighten-2" justify="center">
-
-    </v-row>
 
     <v-row class="grey lighten-1 py-16" justify="center" align="center">
       <v-col :cols="4" class="py-9" >

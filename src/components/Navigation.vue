@@ -29,9 +29,21 @@
         <span>Reserve</span>
       </v-btn>
       <v-divider class="mx-2" vertical></v-divider>
-      <v-icon right :color="tabcolor">mdi-email</v-icon>
+
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-icon v-bind="attrs" v-on="on" right :color="tabcolor">mdi-email</v-icon>
+        </template>
+        <span>Email Red Pine Inn</span>
+      </v-tooltip>
+
       <v-divider class="mx-4" vertical></v-divider>
-      <v-icon right :color="tabcolor" class="mr-4">mdi-phone</v-icon>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+      <v-icon v-bind="attrs" v-on="on" right :color="tabcolor" class="mr-4">mdi-phone</v-icon>
+        </template>
+        <span>Call Red Pine Inn</span>
+      </v-tooltip>
       <v-divider vertical></v-divider>
     </v-app-bar>
 
