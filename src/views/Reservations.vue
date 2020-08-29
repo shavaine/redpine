@@ -30,14 +30,28 @@
             <v-row>
               <v-col :cols="6" class="py-0">
                 <ValidationProvider v-slot="{ errors }" name="checkIn" rules="required|max:15">
-                  <v-select
+                  <v-menu
                           v-model="checkIn"
+                          :close-on-content-click="false"
+                          :nudge-right="40"
                           :error-messages="errors"
-                          label="Check-In"
-                          required
-                          outlined
-                          dense
-                  ></v-select>
+                          transition="scale-transition"
+                          offset-y
+                          min-width="290px"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-text-field
+                              v-model="checkInDate"
+                              label="Check-In"
+                              readonly
+                              outlined
+                              dense
+                              v-bind="attrs"
+                              v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="checkInDate" @input="checkIn = false"></v-date-picker>
+                  </v-menu>
                 </ValidationProvider>
               </v-col>
               <v-col :cols="6" class="py-0">
@@ -45,6 +59,7 @@
                   <v-select
                           v-model="adults"
                           :error-messages="errors"
+                          :items="numbers"
                           label="Adults"
                           required
                           outlined
@@ -56,14 +71,28 @@
             <v-row>
               <v-col :cols="6" class="py-0">
                 <ValidationProvider v-slot="{ errors }" name="checkOut" rules="required|max:15">
-                  <v-select
+                  <v-menu
                           v-model="checkOut"
+                          :close-on-content-click="false"
+                          :nudge-right="40"
                           :error-messages="errors"
-                          label="Check-Out"
-                          required
-                          outlined
-                          dense
-                  ></v-select>
+                          transition="scale-transition"
+                          offset-y
+                          min-width="290px"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-text-field
+                              v-model="checkOutDate"
+                              label="Check-In"
+                              readonly
+                              outlined
+                              dense
+                              v-bind="attrs"
+                              v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="checkOutDate" @input="checkOut = false"></v-date-picker>
+                  </v-menu>
                 </ValidationProvider>
               </v-col>
               <v-col :cols="6" class="py-0">
@@ -71,6 +100,7 @@
                   <v-select
                           v-model="children"
                           :error-messages="errors"
+                          :items="numbers"
                           label="Children"
                           required
                           outlined
@@ -85,6 +115,7 @@
                   <v-select
                           v-model="roomType"
                           :error-messages="errors"
+                          :items="roomTypes"
                           label="Room Type"
                           required
                           outlined
@@ -229,20 +260,43 @@ export default {
     ValidationObserver
   },
   data: () => ({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
-    message: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    country: "",
+    checkIn: false,
+    checkInDate: new Date().toISOString().substr(0, 10),
+    checkOut: "",
+    checkOutDate: new Date().toISOString().substr(0, 10),
+    adults: "",
+    children: "",
+    roomType: "",
+    numbers: ['1', '2', '3', '4'],
+    roomTypes: ['One Double', 'Two Queens', 'Kitchenette']
+
   }),
 
   methods: {
     submit() {
       this.$refs.observer.validate();
-      console.log(this.name, this.email, this.phone, this.message);
-      this.name = "";
+      console.log(this.firstName, this.lastName, this.email, this.phone, this.address, this.city, this.postalCode, this.country, this.checkInDate, this.checkOutDate, this.adults, this.children, this.roomType);
+      this.firstName = "";
+      this.lastName = "";
       this.email = "";
       this.phone = "";
-      this.message = "";
+      this.address = "";
+      this.city = "";
+      this.postalCode = "";
+      this.country = "";
+      this.checkInDate = "";
+      this.checkOutDate = "";
+      this.adults = "";
+      this.children = "";
+      this.roomType = "";
       this.$refs.observer.reset();
     },
   }

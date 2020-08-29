@@ -35,8 +35,8 @@
         <v-row justify="center">
           <v-col v-for="card in cards1" :key="card.title" :cols="card.flex" class="px-7 my-8">
             <v-card class="pa-6 rounded-xl" color="grey lighten-1">
-              <v-card-title v-text="card.title"></v-card-title>
-              <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
+              <v-card-title class="px-0" v-text="card.title"></v-card-title>
+              <v-card-subtitle class="px-0" v-text="card.subtitle"></v-card-subtitle>
               <v-img
                 :src="card.src"
                 class="white--text align-end"
@@ -45,7 +45,7 @@
               >
               </v-img>
               <v-card-actions class="pa-0"> </v-card-actions>
-              <v-card-text v-text="card.text"></v-card-text>
+              <v-card-text class="px-0" v-text="card.text"></v-card-text>
             </v-card>
           </v-col>
         </v-row>

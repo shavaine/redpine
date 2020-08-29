@@ -26,22 +26,24 @@
       </v-carousel>
     </v-row>
     <v-row class="grey lighten-1 py-16" justify="center">
-      <v-col :cols="4" class="" align-self="center">
-        <div class="text-h5 font-weight-bold">About Us</div>
-        <div class="text-h7 my-5 font-weight-medium">
+      <v-col :cols="4" align-self="center" class="px-10">
+        <div class="text-h4 font-weight-bold">About Us</div>
+        <div class="text-h6 my-5 font-weight-light">
           The Red Pine Inn & Conference Centre, located in beautiful downtown
           Alliston, Ontario has a lot to offer. More than a 94-room hotel, the
           Red Pine Inn is a multifaceted facility, and a part of our towns proud
           history.
         </div>
-        <div class="text-h7 font-weight-medium">
+        <div class="text-h6 font-weight-light">
           The Red Pine is a place to stay both long and short term, with
           pet-friendly rooms, and is entirely non-smoking. 24 rooms have
           kitchenettes and there’s even an “allergy–friendly” zone for those who
           aren’t bringing their pets to stay.
         </div>
       </v-col>
-      <v-col :cols="4" class="py-9" >
+      <v-col :cols="1" >
+      </v-col>
+      <v-col :cols="4" class="py-9 px-10" >
         <v-img src="https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></v-img>
       </v-col>
     </v-row>
@@ -50,7 +52,7 @@
       <div class="text-h4 font-italic font-weight-light mb-4 mt-16">Recent News</div>
       <v-container fluid>
         <v-row justify="center">
-          <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
+          <v-col v-for="card in cards" :key="card.title" :cols="card.flex" class="">
             <v-card color="grey lighten-1" class="pa-3 rounded-xl">
               <v-card-title v-text="card.title"></v-card-title>
               <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
