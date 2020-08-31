@@ -4,6 +4,7 @@
       <v-app-bar-nav-icon
         :color="tabcolor"
         @click="drawer = !drawer"
+        class="d-flex d-xl-none d-lg-none"
       ></v-app-bar-nav-icon>
       <v-toolbar-title class="text-capitalize white--text">
         <v-img
@@ -14,7 +15,7 @@
           class="mr-4"
         ></v-img>
       </v-toolbar-title>
-      <v-button-toggle>
+      <v-button-toggle class="d-none d-lg-flex d-xl-flex">
         <v-btn text :color="tabcolor" class="text-capitalize" to="/">Home</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/rooms">Rooms</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/amenities">Amenities</v-btn>
@@ -24,27 +25,32 @@
       </v-button-toggle>
       <v-spacer></v-spacer>
 
-      <v-divider class="mx-2" vertical></v-divider>
-      <v-btn text :color="tabcolor" to="/reservations">
+      <v-divider class="mx-2 d-none d-lg-flex d-xl-flex" vertical></v-divider>
+      <v-btn class="d-none d-lg-flex d-xl-flex" text :color="tabcolor" to="/reservations">
         <span>Reserve</span>
       </v-btn>
       <v-divider class="mx-2" vertical></v-divider>
 
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
+          <a href="mailto: reservations@redpineinn.com" >
           <v-icon v-bind="attrs" v-on="on" right :color="tabcolor">mdi-email</v-icon>
+          </a>
         </template>
         <span>Email Red Pine Inn</span>
       </v-tooltip>
 
-      <v-divider class="mx-4" vertical></v-divider>
+
+      <v-divider class="mx-4 d-flex d-xl-none d-lg-none" vertical></v-divider>
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
-      <v-icon v-bind="attrs" v-on="on" right :color="tabcolor" class="mr-4">mdi-phone</v-icon>
+          <a href="tel:7054354381" class="d-flex d-xl-none d-lg-none">
+          <v-icon v-bind="attrs" v-on="on" right :color="tabcolor" class="mr-4">mdi-phone</v-icon>
+          </a>
         </template>
         <span>Call Red Pine Inn</span>
       </v-tooltip>
-      <v-divider vertical></v-divider>
+      <v-divider vertical class="d-flex d-xl-none d-lg-none"></v-divider>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app color="#7f0000">
@@ -68,6 +74,9 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-row justify="center">
+        <v-btn outlined dark @click="drawer = !drawer">Close Menu</v-btn>
+      </v-row>
     </v-navigation-drawer>
   </nav>
 </template>
@@ -94,25 +103,11 @@ export default {
       { icon: "mdi-notebook", text: "Book Room", route: "/reservations" }
     ]
   }),
-  // methods: {
-  //   updateScroll() {
-  //     this.scrollPosition = window.scrollY;
-  //   },
-  //   navCurrent() {
-  //     if (this.scrollPosition > 200) {
-  //       this.navcolor = "grey lighten-3";
-  //       this.tabcolor = "#7f0000";
-  //     } else {
-  //       this.navcolor = "#7f0000";
-  //       this.tabcolor = "#FFF9C4";
-  //     }
-  //   }
-  // },
-  // mounted() {
-  //   window.addEventListener("scroll", this.updateScroll);
-  //   window.addEventListener("scroll", this.navCurrent);
-  // }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  a {
+    text-decoration: none;
+  }
+</style>

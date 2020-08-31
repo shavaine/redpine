@@ -33,10 +33,6 @@
                     <span>Details</span>
                   </v-btn></v-col>
                 </v-row>
-
-<!--                                <v-spacer></v-spacer>-->
-
-
               </v-card-actions>
             </v-card>
           </v-col>
@@ -53,19 +49,20 @@ export default {
     cards: [
       {
         title: "Two Queen Beds",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        // src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        src: require("../assets/images/Queens.jpg"),
         flex: 3,
         link: "/queens"
       },
       {
         title: "Kitchenette with Sofa",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        src: require("../assets/images/Kitchen.jpg"),
         flex: 3,
         link: "/kitchenette"
       },
       {
         title: "One Double Bed (Pet Friendly)",
-        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        src: require("../assets/images/Single.jpg"),
         flex: 3,
         link: "/double"
       }
@@ -82,7 +79,7 @@ export default {
   height: 250px;
 }
 .hero-image {
-  background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+  background-image: url("../assets/images/Pillows.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 250px; /* You must set a specified height */
   background-position: center; /* Center the image */

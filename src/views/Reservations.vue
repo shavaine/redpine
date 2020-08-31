@@ -270,7 +270,7 @@ export default {
     country: "",
     checkIn: false,
     checkInDate: new Date().toISOString().substr(0, 10),
-    checkOut: "",
+    checkOut: false,
     checkOutDate: new Date().toISOString().substr(0, 10),
     adults: "",
     children: "",
@@ -294,9 +294,9 @@ export default {
       this.country = "";
       this.checkInDate = "";
       this.checkOutDate = "";
-      this.adults = "";
-      this.children = "";
-      this.roomType = "";
+      this.adults = false;
+      this.children = false;
+      this.roomType = false;
       this.$refs.observer.reset();
     },
   }
@@ -309,7 +309,7 @@ export default {
     height: 250px;
   }
   .hero-image {
-    background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+    background-image: url("../assets/images/Pillows.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 250px; /* You must set a specified height */
     background-position: center; /* Center the image */

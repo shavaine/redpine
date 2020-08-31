@@ -12,7 +12,7 @@
                   align="center"
                   justify="center"
           >
-            <div class="display-2 font-weight-light text-center">
+            <div class="text-sm-h2 text-h4 font-weight-light text-center">
               <span>Comfortable Stay</span>
               <br>
               <span>The Alliston Way</span>
@@ -44,7 +44,7 @@
       <v-col :cols="1" >
       </v-col>
       <v-col :cols="4" class="py-9 px-10" >
-        <v-img src="https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></v-img>
+        <v-img src="../assets/images/Home3.jpg"></v-img>
       </v-col>
     </v-row>
 

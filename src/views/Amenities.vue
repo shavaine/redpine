@@ -114,7 +114,7 @@
         </v-card>
       </v-col>
       <v-col :cols="4" class="py-9" >
-        <v-img src="../assets/images/dumbells.jpg"></v-img>
+        <v-img src="../assets/images/Fitness.jpg"></v-img>
       </v-col>
     </v-row>
   </v-container>
@@ -131,7 +131,7 @@ export default {
     height: 250px;
   }
   .hero-image {
-    background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+    background-image: url("../assets/images/Pillows.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 250px; /* You must set a specified height */
     background-position: center; /* Center the image */

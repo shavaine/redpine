@@ -61,52 +61,52 @@ export default {
     cards: [
       {
         title: "Tanger Outlet",
-        subtitle: "15km",
+        subtitle: "16.9km",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+          "Get your shopping on! With many brand-name store to choose from, you can be sure to find something you like.",
+        src: require("../assets/images/Tanger.jpg"),
         flex: 3
       },
       {
         title: "Museum On The Boyne",
-        subtitle: "15km",
+        subtitle: "3km",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          "Built in 1914, There are many things to see and do at the Museum on the Boyne. Get your fill for Simcoe County!",
+        src: require("../assets/images/Museum.jpg"),
         flex: 3
       },
       {
         title: "The Gibson Centre",
-        subtitle: "15km",
+        subtitle: "2.9km",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          "Rooted in Alliston history, the Gibson Centre features art for viewing, while also being a venue for weddings",
+        src: require("../assets/images/Gibson.jpg"),
         flex: 3
       }
     ],
     cards1: [
       {
         title: "Imagine Cinemas",
-        subtitle: "15km",
+        subtitle: "4km",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+          "Great place to see the latest movies, while also offering VIP treatment with better seating.",
+        src: require("../assets/images/Imagine.jpg"),
         flex: 3
       },
       {
         title: "Barrie Attractions",
-        subtitle: "15km",
+        subtitle: "40km",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          "With a beautiful lakeshore, theres always something to do in Barrie! Enjoy nature or night out as local restaurants. ",
+        src: require("../assets/images/Barrie.jpg"),
         flex: 3
       },
       {
         title: "GTA Attractions",
-        subtitle: "15km",
+        subtitle: "65km-100km",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          "Being the most populated area in Canada, there are many attractions for people to do and places for people to see.",
+        src: require("../assets/images/GTA.jpg"),
         flex: 3
       }
     ]
@@ -119,7 +119,7 @@ export default {
     height: 250px;
   }
   .hero-image {
-    background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+    background-image: url("../assets/images/Pillows.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 250px; /* You must set a specified height */
     background-position: center; /* Center the image */

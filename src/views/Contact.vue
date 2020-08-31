@@ -164,7 +164,7 @@ export default {
     height: 250px;
   }
   .hero-image {
-    background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+    background-image: url("../assets/images/Pillows.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 250px; /* You must set a specified height */
     background-position: center; /* Center the image */

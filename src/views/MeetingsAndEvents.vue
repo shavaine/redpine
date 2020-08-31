@@ -29,16 +29,16 @@
         </v-row>
         <v-row justify="center" class="px-13 pb-13">
           <v-col :cols="3"
-          ><v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg"></v-img
+          ><v-img src="../assets/images/conf1.jpg"></v-img
           ></v-col>
           <v-col :cols="3"
-          ><v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg"></v-img
+          ><v-img src="../assets/images/conf2.jpg"></v-img
           ></v-col>
           <v-col :cols="3"
-          ><v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg"></v-img
+          ><v-img src="../assets/images/conf3.jpg"></v-img
           ></v-col>
           <v-col :cols="3"
-          ><v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg"></v-img
+          ><v-img src="../assets/images/conf2.jpg"></v-img
           ></v-col>
         </v-row>
         <v-row justify="center">
@@ -69,16 +69,16 @@
           </v-row>
           <v-row justify="center" class="px-13 pb-13" >
             <v-col :cols="3"
-            ><v-img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></v-img
+            ><v-img src="../assets/images/Wedding6.jpg"></v-img
             ></v-col>
             <v-col :cols="3"
-            ><v-img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></v-img
+            ><v-img src="../assets/images/Wedding2.jpg"></v-img
             ></v-col>
             <v-col :cols="3"
-            ><v-img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></v-img
+            ><v-img src="../assets/images/Wedding3.jpg"></v-img
             ></v-col>
             <v-col :cols="3"
-            ><v-img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></v-img
+            ><v-img src="../assets/images/Wedding5.jpg"></v-img
             ></v-col>
           </v-row>
           <v-row justify="center" >
@@ -104,7 +104,7 @@ export default {
     height: 250px;
   }
   .hero-image {
-    background-image: url("../assets/images/hotel-room.jpg"); /* The image used */
+    background-image: url("../assets/images/Pillows.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 250px; /* You must set a specified height */
     background-position: center; /* Center the image */

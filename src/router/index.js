@@ -6,7 +6,6 @@ import Amenities from "../views/Amenities";
 import MeetingsAndEvents from "../views/MeetingsAndEvents";
 import ThingsToDo from "../views/ThingsToDo";
 import Contact from "../views/Contact";
-import Bookings from "../views/Bookings";
 import Reservations from "../views/Reservations";
 import TwoQueens from "../views/TwoQueens";
 import OneDouble from "../views/OneDouble";
@@ -44,11 +43,6 @@ const routes = [
     path: "/contact",
     name: "Contact",
     component: Contact
-  },
-  {
-    path: "/bookings",
-    name: "Bookings",
-    component: Bookings
   },
   {
     path: "/reservations",
