@@ -11,10 +11,10 @@
       </v-row>
     </v-row>
 <!--    banner-->
-    <v-row class="grey lighten-1 pa-3 room-sec" align-content="center" >
+    <v-row class="grey lighten-1 pa-3 room-sec" align-content="center" justify="center" >
       <v-container fluid class="my-5">
         <v-row justify="center" >
-          <v-col v-for="card in cards" :key="card.title" :cols="card.flex" >
+          <v-col v-for="card in cards" :key="card.title" :lg="3" :md="4" :sm="6" :cols="12" >
             <v-card color="grey" class="pa-5 rounded-lg">
               <v-img
                 :src="card.src"
@@ -72,9 +72,6 @@ export default {
 </script>
 
 <style scoped>
-.room-sec {
-  height: 575px;
-}
 .banner {
   height: 250px;
 }

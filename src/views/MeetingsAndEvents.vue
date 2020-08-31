@@ -7,14 +7,14 @@
               align="center"
               justify="center"
       >
-        <div class="display-2 font-weight-medium white--text"> Meetings & Events</div>
+        <div class="text-sm-h3 text-h4 font-weight-medium white--text"> Meetings & Events</div>
       </v-row>
     </v-row>
     <!--    banner-->
 
     <v-row class="grey lighten-1" justify="center">
       <!--    Conferences-->
-      <v-col :cols="8" class="my-5">
+      <v-col :lg="8" :md="8" :sm="10" :xs="10" :cols="12" class="my-5">
       <v-card class="grey mt-9">
         <v-row justify="center">
           <v-col :cols="11" >
@@ -28,16 +28,16 @@
           </v-col>
         </v-row>
         <v-row justify="center" class="px-13 pb-13">
-          <v-col :cols="3"
+          <v-col  :md="3" :sm="6" :xs="10" :cols="12"
           ><v-img src="../assets/images/conf1.jpg"></v-img
           ></v-col>
-          <v-col :cols="3"
+          <v-col  :md="3" :sm="6" :xs="10" :cols="12" class="d-none d-sm-flex"
           ><v-img src="../assets/images/conf2.jpg"></v-img
           ></v-col>
-          <v-col :cols="3"
+          <v-col  :md="3" :sm="6" :xs="10" :cols="12" class="d-none d-sm-flex"
           ><v-img src="../assets/images/conf3.jpg"></v-img
           ></v-col>
-          <v-col :cols="3"
+          <v-col  :md="3" :sm="6" :xs="10" :cols="12" class="d-none d-sm-flex"
           ><v-img src="../assets/images/conf2.jpg"></v-img
           ></v-col>
         </v-row>
@@ -57,7 +57,7 @@
       </v-col>
       <!--    Conferences-->
       <!--      Weddings-->
-      <v-col :cols="8" class="my-5">
+      <v-col :lg="8" :md="8" :sm="10" :xs="10" :cols="12" class="my-5">
         <v-card class="grey lighten-2 mb-12">
           <v-row justify="center">
             <v-col :cols="11" >
@@ -68,16 +68,16 @@
             </v-col>
           </v-row>
           <v-row justify="center" class="px-13 pb-13" >
-            <v-col :cols="3"
+            <v-col :md="3" :sm="6" :xs="10" :cols="12"
             ><v-img src="../assets/images/Wedding6.jpg"></v-img
             ></v-col>
-            <v-col :cols="3"
+            <v-col :md="3" :sm="6" :xs="10" :cols="12" class="d-none d-sm-flex"
             ><v-img src="../assets/images/Wedding2.jpg"></v-img
             ></v-col>
-            <v-col :cols="3"
+            <v-col :md="3" :sm="6" :xs="10" :cols="12" class="d-none d-sm-flex"
             ><v-img src="../assets/images/Wedding3.jpg"></v-img
             ></v-col>
-            <v-col :cols="3"
+            <v-col :md="3" :sm="6" :xs="10" :cols="12" class="d-none d-sm-flex"
             ><v-img src="../assets/images/Wedding5.jpg"></v-img
             ></v-col>
           </v-row>

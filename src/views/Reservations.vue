@@ -15,7 +15,7 @@
     <v-row>
       <v-container fluid class="footer-color py-8">
         <v-row justify="center">
-          <v-col :cols="6">
+          <v-col :lg="6" :md="8" :sm="10" :cols="10">
             <div class="text-h4 amenityText my-3 font-italic text-center mb-8">Reservation Request</div>
             <div class="text-body-1 amenityText my-3">This form is an availability request. It is a non-binding request and no payment is required. You will receive a reply within 24 hours, at which time you will have an opportunity to confirm your booking if the room you have requested is available.</div>
           </v-col>
@@ -23,7 +23,100 @@
       </v-container>
     </v-row>
     <v-row justify="center" class=" grey lighten-1 py-15">
-      <v-col :cols="3" class="mr-2">
+      <v-col :lg="3" :md="4" :sm="5" :cols="10" class="mr-sm-2">
+        <div class="text-h5 my-5">Guest Information</div>
+        <ValidationObserver ref="observer" tag="div" class="form">
+          <v-form>
+            <ValidationProvider v-slot="{ errors }" name="firstName" rules="required|max:15">
+              <v-text-field
+                      v-model="firstName"
+                      :error-messages="errors"
+                      label="First Name"
+                      required
+                      outlined
+                      dense
+              ></v-text-field>
+            </ValidationProvider>
+            <ValidationProvider v-slot="{ errors }" name="lastName" rules="required|max:15">
+              <v-text-field
+                      v-model="lastName"
+                      :error-messages="errors"
+                      label="Last Name"
+                      required
+                      outlined
+                      dense
+              ></v-text-field>
+            </ValidationProvider>
+            <ValidationProvider v-slot="{ errors }" name="email" rules="required|email">
+              <v-text-field
+                      v-model="email"
+                      :error-messages="errors"
+                      label="E-mail"
+                      required
+                      outlined
+                      dense
+              ></v-text-field>
+            </ValidationProvider>
+            <ValidationProvider v-slot="{ errors }" name="phone" rules="required|digits:10">
+              <v-text-field
+                      v-model="phone"
+                      :error-messages="errors"
+                      label="Phone #"
+                      required
+                      outlined
+                      dense
+              ></v-text-field>
+            </ValidationProvider>
+            <ValidationProvider v-slot="{ errors }" name="address" rules="required|max:15">
+              <v-text-field
+                      v-model="address"
+                      :error-messages="errors"
+                      label="Address"
+                      required
+                      outlined
+                      dense
+              ></v-text-field>
+            </ValidationProvider>
+            <v-row>
+              <v-col :cols="6" class="py-0">
+                <ValidationProvider v-slot="{ errors }" name="city" rules="required|max:15">
+                  <v-text-field
+                          v-model="city"
+                          :error-messages="errors"
+                          label="City"
+                          required
+                          outlined
+                          dense
+                  ></v-text-field>
+                </ValidationProvider>
+              </v-col>
+              <v-col :cols="6" class="py-0">
+                <ValidationProvider v-slot="{ errors }" name="postalCode" rules="required|max:8">
+                  <v-text-field
+                          v-model="postalCode"
+                          :error-messages="errors"
+                          label="Postal Code"
+                          required
+                          outlined
+                          dense
+                  ></v-text-field>
+                </ValidationProvider>
+              </v-col>
+            </v-row>
+            <ValidationProvider v-slot="{ errors }" name="country" rules="required|max:15">
+              <v-text-field
+                      v-model="country"
+                      :error-messages="errors"
+                      label="Country"
+                      required
+                      outlined
+                      dense
+              ></v-text-field>
+            </ValidationProvider>
+          </v-form>
+        </ValidationObserver>
+      </v-col>
+      <v-col :lg="3" :md="4" :sm="5" :cols="10" class="ml-sm-2">
         <div class="text-h5 my-5">Booking Information</div>
         <ValidationObserver ref="observer" tag="div" class="form">
           <v-form>
@@ -127,99 +220,6 @@
             <v-btn color="#b71c1c" dark rounded @click="submit">
               <span>Submit Request</span>
             </v-btn>
-          </v-form>
-        </ValidationObserver>
-      </v-col>
-      <v-col :cols="3" class="ml-2">
-        <div class="text-h5 my-5">Guest Information</div>
-        <ValidationObserver ref="observer" tag="div" class="form">
-          <v-form>
-            <ValidationProvider v-slot="{ errors }" name="firstName" rules="required|max:15">
-              <v-text-field
-                      v-model="firstName"
-                      :error-messages="errors"
-                      label="First Name"
-                      required
-                      outlined
-                      dense
-              ></v-text-field>
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" name="lastName" rules="required|max:15">
-              <v-text-field
-                      v-model="lastName"
-                      :error-messages="errors"
-                      label="Last Name"
-                      required
-                      outlined
-                      dense
-              ></v-text-field>
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" name="email" rules="required|email">
-              <v-text-field
-                      v-model="email"
-                      :error-messages="errors"
-                      label="E-mail"
-                      required
-                      outlined
-                      dense
-              ></v-text-field>
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" name="phone" rules="required|digits:10">
-              <v-text-field
-                      v-model="phone"
-                      :error-messages="errors"
-                      label="Phone #"
-                      required
-                      outlined
-                      dense
-              ></v-text-field>
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" name="address" rules="required|max:15">
-              <v-text-field
-                      v-model="address"
-                      :error-messages="errors"
-                      label="Address"
-                      required
-                      outlined
-                      dense
-              ></v-text-field>
-            </ValidationProvider>
-            <v-row>
-              <v-col :cols="6" class="py-0">
-                <ValidationProvider v-slot="{ errors }" name="city" rules="required|max:15">
-                  <v-text-field
-                          v-model="city"
-                          :error-messages="errors"
-                          label="City"
-                          required
-                          outlined
-                          dense
-                  ></v-text-field>
-                </ValidationProvider>
-              </v-col>
-              <v-col :cols="6" class="py-0">
-                <ValidationProvider v-slot="{ errors }" name="postalCode" rules="required|max:8">
-                  <v-text-field
-                          v-model="postalCode"
-                          :error-messages="errors"
-                          label="Postal Code"
-                          required
-                          outlined
-                          dense
-                  ></v-text-field>
-                </ValidationProvider>
-              </v-col>
-            </v-row>
-            <ValidationProvider v-slot="{ errors }" name="country" rules="required|max:15">
-              <v-text-field
-                      v-model="country"
-                      :error-messages="errors"
-                      label="Country"
-                      required
-                      outlined
-                      dense
-              ></v-text-field>
-            </ValidationProvider>
           </v-form>
         </ValidationObserver>
       </v-col>

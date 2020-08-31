@@ -26,15 +26,15 @@
       </v-carousel>
     </v-row>
     <v-row class="grey lighten-1 py-16" justify="center">
-      <v-col :cols="4" align-self="center" class="px-10">
+      <v-col :lg="4" :md="5" :xs="8" align-self="center" class="px-10">
         <div class="text-h4 font-weight-bold">About Us</div>
-        <div class="text-h6 my-5 font-weight-light">
+        <div class="text-sm-h6 text-body-1 my-5 font-weight-light">
           The Red Pine Inn & Conference Centre, located in beautiful downtown
           Alliston, Ontario has a lot to offer. More than a 94-room hotel, the
           Red Pine Inn is a multifaceted facility, and a part of our towns proud
           history.
         </div>
-        <div class="text-h6 font-weight-light">
+        <div class="text-sm-h6 text-body-1 font-weight-light">
           The Red Pine is a place to stay both long and short term, with
           pet-friendly rooms, and is entirely non-smoking. 24 rooms have
           kitchenettes and there’s even an “allergy–friendly” zone for those who
@@ -43,16 +43,16 @@
       </v-col>
       <v-col :cols="1" >
       </v-col>
-      <v-col :cols="4" class="py-9 px-10" >
+      <v-col :lg="4" :md="5" :xs="8" class="py-9 px-10" >
         <v-img src="../assets/images/Home3.jpg"></v-img>
       </v-col>
     </v-row>
 
-    <v-row class="grey lighten-2 pa-8 pb-16 Major-amenities" align-content="center" justify="center">
+    <v-row class="grey lighten-2 pa-sm-8 pb-16" align-content="center" justify="center">
       <div class="text-h4 font-italic font-weight-light mb-4 mt-16">Recent News</div>
       <v-container fluid>
         <v-row justify="center">
-          <v-col v-for="card in cards" :key="card.title" :cols="card.flex" class="">
+          <v-col v-for="card in cards" :key="card.title" :lg="3" :md="4" :sm="6" :cols="12">
             <v-card color="grey lighten-1" class="pa-3 rounded-xl">
               <v-card-title v-text="card.title"></v-card-title>
               <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
@@ -86,19 +86,19 @@ export default {
         title: "Rec Centre Reopening",
         subtitle: "May 1st 2020",
         text: "The Red Pine Inn & Conference Centre, located in beautiful downtown Alliston, Ontario has a lot to offer. More than a 94-room hotel, the Red Pine Inn is a multifaceted facility, and a part of our towns proud history. The Red Pine is a place to stay both long and short term, with pet-friendly rooms, and is entirely non-smoking.",
-        flex: 3
+        flex: 4
       },
       {
         title: "Covid-19 Measures",
         subtitle: "May 1st 2020",
         text: "The Red Pine Inn & Conference Centre, located in beautiful downtown Alliston, Ontario has a lot to offer. More than a 94-room hotel, the Red Pine Inn is a multifaceted facility, and a part of our towns proud history. The Red Pine is a place to stay both long and short term, with pet-friendly rooms, and is entirely non-smoking.",
-        flex: 3
+        flex: 4
       },
       {
         title: "Membership Notice",
         subtitle: "May 1st 2020",
         text: "The Red Pine Inn & Conference Centre, located in beautiful downtown Alliston, Ontario has a lot to offer. More than a 94-room hotel, the Red Pine Inn is a multifaceted facility, and a part of our towns proud history. The Red Pine is a place to stay both long and short term, with pet-friendly rooms, and is entirely non-smoking.",
-        flex: 3
+        flex: 4
       }
     ]
   })

@@ -13,15 +13,7 @@
     <!--    banner-->
 
     <v-row class="grey lighten-1 py-16" justify="center">
-      <v-col class="mr-10" :cols="5">
-        <v-row>
-          <l-map style="height: 700px" :zoom="zoom" :center="center" class="behind">
-            <l-tile-layer :url="url"></l-tile-layer>
-            <l-marker :lat-lng="markerLatLng" ></l-marker>
-          </l-map>
-        </v-row>
-      </v-col>
-      <v-col class="ml-10" :cols="3">
+      <v-col class="mr-sm-10" :lg="3" :md="4" :sm="5" :cols="10">
         <v-row>
           <div class="mb-6">
             <span class="text-h6">Contact Information</span>
@@ -91,6 +83,14 @@
               </v-btn>
             </v-form>
           </ValidationObserver>
+        </v-row>
+      </v-col>
+      <v-col class="ml-sm-10" :lg="5" :md="5" :sm="5" :cols="10">
+        <v-row>
+          <l-map style="height: 700px" :zoom="zoom" :center="center" class="behind">
+            <l-tile-layer :url="url"></l-tile-layer>
+            <l-marker :lat-lng="markerLatLng" ></l-marker>
+          </l-map>
         </v-row>
       </v-col>
     </v-row>

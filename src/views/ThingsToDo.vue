@@ -15,7 +15,7 @@
       <v-container fluid>
         <div class="text-h4 font-italic font-weight-light mb-4 mt-6 text-center">Attractions</div>
         <v-row justify="center">
-          <v-col v-for="card in cards" :key="card.title" :cols="card.flex" class="px-7 mt-3">
+          <v-col v-for="card in cards" :key="card.title" :lg="3" :md="4" :sm="6" :cols="12" class="px-lg-7 mx-lg-7 mt-3">
             <v-card class="pa-6 rounded-xl" color="grey lighten-1">
               <v-card-title class="px-0" v-text="card.title"></v-card-title>
               <v-card-subtitle class="px-0" v-text="card.subtitle"></v-card-subtitle>
@@ -28,24 +28,6 @@
               </v-img>
               <v-card-actions class="pa-0"> </v-card-actions>
               <v-card-text class="px-0 font-weight-medium" v-text="card.text"></v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-
-        <v-row justify="center">
-          <v-col v-for="card in cards1" :key="card.title" :cols="card.flex" class="px-7 my-8">
-            <v-card class="pa-6 rounded-xl" color="grey lighten-1">
-              <v-card-title class="px-0" v-text="card.title"></v-card-title>
-              <v-card-subtitle class="px-0" v-text="card.subtitle"></v-card-subtitle>
-              <v-img
-                :src="card.src"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="250px"
-              >
-              </v-img>
-              <v-card-actions class="pa-0"> </v-card-actions>
-              <v-card-text class="px-0" v-text="card.text"></v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -82,14 +64,12 @@ export default {
           "Rooted in Alliston history, the Gibson Centre features art for viewing, while also being a venue for weddings",
         src: require("../assets/images/Gibson.jpg"),
         flex: 3
-      }
-    ],
-    cards1: [
+      },
       {
         title: "Imagine Cinemas",
         subtitle: "4km",
         text:
-          "Great place to see the latest movies, while also offering VIP treatment with better seating.",
+                "Great place to see the latest movies, while also offering VIP treatment with better seating.",
         src: require("../assets/images/Imagine.jpg"),
         flex: 3
       },
@@ -97,7 +77,7 @@ export default {
         title: "Barrie Attractions",
         subtitle: "40km",
         text:
-          "With a beautiful lakeshore, theres always something to do in Barrie! Enjoy nature or night out as local restaurants. ",
+                "With a beautiful lakeshore, theres always something to do in Barrie! Enjoy a night out as local restaurants. ",
         src: require("../assets/images/Barrie.jpg"),
         flex: 3
       },
@@ -105,11 +85,11 @@ export default {
         title: "GTA Attractions",
         subtitle: "65km-100km",
         text:
-          "Being the most populated area in Canada, there are many attractions for people to do and places for people to see.",
+                "Being the most populated area in Canada, there are many attractions for people to do and places for people to see.",
         src: require("../assets/images/GTA.jpg"),
         flex: 3
       }
-    ]
+    ],
   })
 };
 </script>

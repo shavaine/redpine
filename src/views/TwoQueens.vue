@@ -12,7 +12,7 @@
     </v-row>
     <!--    banner-->
     <v-row class="grey lighten-1 py-16" justify="center">
-      <v-col :cols="4" class="py-9" >
+      <v-col :lg="4" :md="5" :xs="8" class="py-9" >
         <v-carousel hide-delimiters>
           <v-carousel-item
                   v-for="(item, i) in items"
@@ -21,9 +21,9 @@
           ></v-carousel-item>
         </v-carousel>
       </v-col>
-      <v-col :cols="4" class="pa-10" align-self="center">
+      <v-col :lg="4" :md="5" :xs="8" class="pa-10" align-self="center">
         <div class="text-h5 font-weight-bold">Details</div>
-        <div class="text-h6 my-5 font-weight-light">
+        <div class="text-sm-h6 text-body-1 my-5 font-weight-light">
           Two queen size beds located in our 2 storey building (internal
           access). This deluxe room features mini fridge, spacious work desk
           with ergonomic working chair, phone, coffee maker, blow dryer, iron
