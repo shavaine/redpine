@@ -26,6 +26,9 @@
         <div class="text-sm-h6 text-body-1 my-5 font-weight-light">
           One queen size bed. This room features a small kitchen facility with eating area and living room space with a queen pullout couch. Spacious work desk with ergonomic working chair, coffee maker, iron and ironing board, blow dryer, flat screen TV. Maximum occupancy is 4 people. Non smoking or smoking rooms available.
         </div>
+        <v-btn class="font-weight-light" block color="#7f0000" outlined to="/rooms">
+          <span>Back To Rooms</span>
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>

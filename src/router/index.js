@@ -17,52 +17,92 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    meta: {
+      auth: true,
+      title: 'Home - Red Pine Inn'
+    }
   },
   {
     path: "/rooms",
     name: "Rooms",
-    component: Rooms
+    component: Rooms,
+    meta: {
+      auth: true,
+      title: 'Rooms - Red Pine Inn'
+    }
   },
   {
     path: "/amenities",
     name: "Amenities",
-    component: Amenities
+    component: Amenities,
+    meta: {
+      auth: true,
+      title: 'Amenities - Red Pine Inn'
+    }
   },
   {
     path: "/meetings",
     name: "Meetings",
-    component: MeetingsAndEvents
+    component: MeetingsAndEvents,
+    meta: {
+      auth: true,
+      title: 'Meetings - Red Pine Inn'
+    }
   },
   {
     path: "/things",
     name: "ThingsToDo",
-    component: ThingsToDo
+    component: ThingsToDo,
+    meta: {
+      auth: true,
+      title: 'Things To Do - Red Pine Inn'
+    }
   },
   {
     path: "/contact",
     name: "Contact",
-    component: Contact
+    component: Contact,
+    meta: {
+      auth: true,
+      title: 'Contact - Red Pine Inn'
+    }
   },
   {
     path: "/reservations",
     name: "Reservations",
-    component: Reservations
+    component: Reservations,
+    meta: {
+      auth: true,
+      title: 'Reservations - Red Pine Inn'
+    }
   },
   {
     path: "/queens",
     name: "TwoQueens",
-    component: TwoQueens
+    component: TwoQueens,
+    meta: {
+      auth: true,
+      title: 'Queens - Red Pine Inn'
+    }
   },
   {
     path: "/double",
     name: "OneDoubles",
-    component: OneDouble
+    component: OneDouble,
+    meta: {
+      auth: true,
+      title: 'Double - Red Pine Inn'
+    }
   },
   {
     path: "/kitchenette",
     name: "Kitchenette",
-    component: Kitchenette
+    component: Kitchenette,
+    meta: {
+      auth: true,
+      title: 'Kitchenette - Red Pine Inn'
+    }
   },
   {
     path: "*",

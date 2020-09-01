@@ -19,7 +19,7 @@
         <v-row justify="center">
           <v-col :cols="11" >
             <div class="text-h4 pb-5 font-weight-light text-center mt-4">Conferences</div>
-            <div class="text-h6  my-3">
+            <div class="text-h6 font-weight-light my-3">
               Situated in Alliston, our on-site banquet, conference and reception
               centre offers you the opportunity to make your next business meeting,
               conference or banquet a big success! we serve all of New Tecumseth's
@@ -43,15 +43,26 @@
         </v-row>
         <v-row justify="center">
           <v-col :cols="11">
-            <div class="text-h6 pb-9 ">
+            <div class="text-h6 font-weight-light pb-9 ">
               Formal or informal setup for banquets or business meetings in class room, theatre or horseshoe setup format is available.
             </div>
           </v-col>
         </v-row>
         <v-row justify="center" >
-          <v-btn color="#b71c1c" class="mb-n5 mr-6 text-center"  dark rounded large to="/reservations">
-            <span>View Conference Setups</span>
-          </v-btn>
+          <v-dialog v-model="conferenceSets" width="375">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn color="#b71c1c" class="mb-n5 mr-6 text-center"  dark rounded large v-bind="attrs" v-on="on">
+                <span class="text-capitalize mx-5">Gallery</span>
+              </v-btn>
+            </template>
+            <v-carousel hide-delimiters>
+              <v-carousel-item
+                      v-for="(setup, i) in setups"
+                      :key="i"
+                      :src="setup.src"
+              ></v-carousel-item>
+            </v-carousel>
+          </v-dialog>
         </v-row>
       </v-card>
       </v-col>
@@ -62,7 +73,7 @@
           <v-row justify="center">
             <v-col :cols="11" >
               <div class="text-h4 pb-5 font-weight-light text-center mt-4">Weddings</div>
-              <div class="text-h6 my-3">
+              <div class="text-h6 font-weight-light my-3">
                 For people looking for a place to stay after a wedding, look no further. We offer Discounted rates on wedding blocks and people looking to book the conference center for the reception.
               </div>
             </v-col>
@@ -95,7 +106,42 @@
 
 <script>
 export default {
-  name: "MeetingsAndEvents"
+  name: "MeetingsAndEvents",
+  data: () => ({
+    conferenceSets: false,
+    setups: [
+      {
+        src: require("../assets/images/conference/conf1.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf2.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf3.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf4.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf5.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf6.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf7.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf8.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf9.jpg")
+      },
+      {
+        src: require("../assets/images/conference/conf10.jpg")
+      }
+    ]
+  })
 };
 </script>
 

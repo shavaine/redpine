@@ -1,28 +1,22 @@
 <template>
   <nav>
     <v-app-bar app elevation="1" scroll-threshold="500" :color="navcolor">
-      <v-app-bar-nav-icon
-        :color="tabcolor"
-        @click="drawer = !drawer"
-        class="d-flex d-xl-none d-lg-none"
-      ></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-capitalize white--text">
-        <v-img
-          src="../assets/images/test3.png"
-          alt=""
-          max-width="200"
-          v-if="navcolor !== '#7f0000'"
-          class="mr-4"
+        <router-link to="/">
+          <v-img
+                src="../assets/images/MainLogo.png"
+                alt="Red Pine Inn"
+                max-width="200"
+                class="mr-4"
         ></v-img>
-      </v-toolbar-title>
-      <v-button-toggle class="d-none d-lg-flex d-xl-flex">
+        </router-link>
+      <div class="d-none d-lg-flex d-xl-flex">
         <v-btn text :color="tabcolor" class="text-capitalize" to="/">Home</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/rooms">Rooms</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/amenities">Amenities</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/meetings">Meetings & Events</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/things">Things To Do</v-btn>
         <v-btn text :color="tabcolor" class="text-capitalize" to="/contact">Contact</v-btn>
-      </v-button-toggle>
+      </div>
       <v-spacer></v-spacer>
 
       <v-divider class="mx-2 d-none d-lg-flex d-xl-flex" vertical></v-divider>
@@ -51,11 +45,17 @@
         <span>Call Red Pine Inn</span>
       </v-tooltip>
       <v-divider vertical class="d-flex d-xl-none d-lg-none"></v-divider>
+      <v-app-bar-nav-icon
+              :color="tabcolor"
+              @click="drawer = !drawer"
+              class="d-flex d-xl-none d-lg-none"
+              clipped-right
+      ></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app color="#7f0000">
+    <v-navigation-drawer v-model="drawer" app right color="#7f0000">
       <v-row justify="center">
-        <v-img src="../assets/images/test3.png" alt="" max-width="200"> </v-img>
+        <v-img src="../assets/images/MainLogo.png" alt="" max-width="200"> </v-img>
       </v-row>
       <v-list color="#7f0000">
         <v-list-item

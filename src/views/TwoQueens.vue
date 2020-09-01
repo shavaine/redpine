@@ -30,6 +30,9 @@
           and ironing board, flat screen TV. Maximum occupancy is 5 people. Pets
           are not permitted and this is a non smoking building.
         </div>
+        <v-btn class="font-weight-light" block color="#7f0000" outlined to="/rooms">
+          <span>Back To Rooms</span>
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>

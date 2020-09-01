@@ -87,12 +87,23 @@
           <v-card-title class="justify-center card-color">Indoor Pool</v-card-title>
           <v-card-subtitle class=" text-center card-color"><div class="card-color subtitle-2">Salt Water</div></v-card-subtitle>
           <v-card-text color="red" class="justify-center px-sm-16 " >
-            <div class="card-color subtitle-2">Locker rooms, complimentary towel service, showers and hairdryer, water station. The pool area is unsupervised, children under the age of 16 are prohibited to enter the Fitness Centre.</div>
+            <div class="card-color body-1">Locker rooms, complimentary towel service, showers and hairdryer, water station. The pool area is unsupervised, children under the age of 16 are prohibited to enter the Fitness Centre.</div>
           </v-card-text>
           <v-card-actions class="justify-center pb-5">
-            <v-btn color="#7f0000" dark rounded outlined to="/">
-              <span class="text-capitalize mx-5">Gallery</span>
-            </v-btn>
+            <v-dialog v-model="galleryP" width="500">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn color="#7f0000" dark rounded outlined v-bind="attrs" v-on="on">
+                  <span class="text-capitalize mx-5">Gallery</span>
+                </v-btn>
+              </template>
+              <v-carousel hide-delimiters>
+                <v-carousel-item
+                        v-for="(pool, i) in pools"
+                        :key="i"
+                        :src="pool.src"
+                ></v-carousel-item>
+              </v-carousel>
+            </v-dialog>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -104,12 +115,24 @@
           <v-card-title class="justify-center card-color">Fitness Facility</v-card-title>
           <v-card-subtitle class=" text-center card-color"><div class="card-color subtitle-2">Free Weights / Machines</div></v-card-subtitle>
           <v-card-text color="red" class="justify-center px-sm-16 " >
-            <div class="card-color subtitle-2">Open concept exercise area for those who wish to work out. We have the following equipment: stationary bicycles, stair master, free weights, elliptical machines, and treadmills.</div>
+            <div class="card-color body-1">Open concept exercise area for those who wish to work out. We have the following equipment: stationary bicycles, stair master, free weights, elliptical machines, and treadmills.</div>
+            <div class=" mt-2 card-color body-1 font-weight-black">We also have a Sauna for those looking to relax after a hard workout </div>
           </v-card-text>
           <v-card-actions class="justify-center pb-5">
-            <v-btn color="#7f0000" dark rounded outlined to="/">
-              <span class="text-capitalize mx-5">Gallery</span>
-            </v-btn>
+            <v-dialog v-model="galleryG" width="500">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn color="#7f0000" dark rounded outlined v-bind="attrs" v-on="on">
+                  <span class="text-capitalize mx-5">Gallery</span>
+                </v-btn>
+              </template>
+                <v-carousel hide-delimiters>
+                  <v-carousel-item
+                        v-for="(gym, i) in gyms"
+                        :key="i"
+                        :src="gym.src"
+                ></v-carousel-item>
+              </v-carousel>
+            </v-dialog>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -122,7 +145,36 @@
 
 <script>
 export default {
-  name: "Amenities"
+  name: "Amenities",
+  data: () => ({
+    galleryP: false,
+    galleryG: false,
+    pools: [
+      {
+        src: require("../assets/images/Pool.jpg")
+      },
+      {
+        src: require("../assets/images/Pool2.jpg")
+      },
+      {
+        src: require("../assets/images/Pool3.jpg")
+      }
+    ],
+    gyms: [
+      {
+        src: require("../assets/images/Fitness.jpg")
+      },
+      {
+        src: require("../assets/images/Fitness2.jpg")
+      },
+      {
+        src: require("../assets/images/Sauna.jpg")
+      },
+      {
+        src: require("../assets/images/Sauna2.jpg")
+      }
+    ]
+  })
 };
 </script>
 

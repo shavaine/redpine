@@ -27,7 +27,7 @@
               >
               </v-img>
               <v-card-actions class="pa-0"> </v-card-actions>
-              <v-card-text class="px-0 font-weight-medium" v-text="card.text"></v-card-text>
+              <v-card-text class="px-0 font-weight-medium body-1" v-text="card.text"></v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -69,7 +69,7 @@ export default {
         title: "Imagine Cinemas",
         subtitle: "4km",
         text:
-                "Great place to see the latest movies, while also offering VIP treatment with better seating.",
+                "Great place to see the latest movies, while you enjoy your favourite snacks and VIP treatment with better seating.",
         src: require("../assets/images/Imagine.jpg"),
         flex: 3
       },
