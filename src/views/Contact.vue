@@ -100,8 +100,10 @@
 <script>
 import { required, email, max, digits } from "vee-validate/dist/rules";
 import {extend, ValidationObserver, ValidationProvider, setInteractionMode} from "vee-validate";
-
 import {LMap, LTileLayer, LMarker} from 'vue2-leaflet';
+import db from "../db";
+import Firebase from 'firebase/app'
+import 'firebase/firestore'
 
 setInteractionMode("eager");
 
@@ -149,11 +151,29 @@ export default {
     submit() {
       this.$refs.observer.validate();
       console.log(this.name, this.email, this.phone, this.message);
+      db.collection("messages").add({
+        guestName: this.name,
+        email: this.email,
+        phone: this.phone,
+        status: "Unread",
+        memo: this.message,
+        createdAt: Firebase.firestore.FieldValue.serverTimestamp()
+      })
+              .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+              })
+              .catch(function(error) {
+                console.error("Error adding document: ", error);
+              });
+
       this.name = "";
       this.email = "";
       this.phone = "";
       this.message = "";
       this.$refs.observer.reset();
+
+      alert("Your Message has been sent");
+      this.$router.push("home")
     },
   }
 };

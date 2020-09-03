@@ -10,6 +10,10 @@ import Reservations from "../views/Reservations";
 import TwoQueens from "../views/TwoQueens";
 import OneDouble from "../views/OneDouble";
 import Kitchenette from "../views/Kitchenette";
+import Login from "../views/Login";
+import Admin from "../views/Admin";
+import Firebase from "firebase/app";
+import 'firebase/auth';
 
 Vue.use(VueRouter);
 
@@ -19,7 +23,6 @@ const routes = [
     name: "Home",
     component: Home,
     meta: {
-      auth: true,
       title: 'Home - Red Pine Inn'
     }
   },
@@ -28,7 +31,6 @@ const routes = [
     name: "Rooms",
     component: Rooms,
     meta: {
-      auth: true,
       title: 'Rooms - Red Pine Inn'
     }
   },
@@ -37,7 +39,6 @@ const routes = [
     name: "Amenities",
     component: Amenities,
     meta: {
-      auth: true,
       title: 'Amenities - Red Pine Inn'
     }
   },
@@ -46,7 +47,6 @@ const routes = [
     name: "Meetings",
     component: MeetingsAndEvents,
     meta: {
-      auth: true,
       title: 'Meetings - Red Pine Inn'
     }
   },
@@ -55,7 +55,6 @@ const routes = [
     name: "ThingsToDo",
     component: ThingsToDo,
     meta: {
-      auth: true,
       title: 'Things To Do - Red Pine Inn'
     }
   },
@@ -64,7 +63,6 @@ const routes = [
     name: "Contact",
     component: Contact,
     meta: {
-      auth: true,
       title: 'Contact - Red Pine Inn'
     }
   },
@@ -73,7 +71,6 @@ const routes = [
     name: "Reservations",
     component: Reservations,
     meta: {
-      auth: true,
       title: 'Reservations - Red Pine Inn'
     }
   },
@@ -82,7 +79,6 @@ const routes = [
     name: "TwoQueens",
     component: TwoQueens,
     meta: {
-      auth: true,
       title: 'Queens - Red Pine Inn'
     }
   },
@@ -91,7 +87,6 @@ const routes = [
     name: "OneDoubles",
     component: OneDouble,
     meta: {
-      auth: true,
       title: 'Double - Red Pine Inn'
     }
   },
@@ -100,8 +95,24 @@ const routes = [
     name: "Kitchenette",
     component: Kitchenette,
     meta: {
-      auth: true,
       title: 'Kitchenette - Red Pine Inn'
+    }
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    meta: {
+      title: 'Login - Red Pine Inn'
+    }
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Admin,
+    meta: {
+      title: 'Admin - Red Pine Inn',
+      requiresAuth: true
     }
   },
   {
@@ -119,7 +130,19 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   window.scrollTo(0, 0);
-  next();
+  // const currentUser = Firebase.auth().currentUser;
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthenticated = Firebase.auth().currentUser;
+  if(requiresAuth && !isAuthenticated){
+    next("login")
+  } else {
+    next();
+  }
+  // if (requiresAuth && !currentUser){
+  //   next('login');
+  // }else{
+  //   next();
+  // }
 });
 
 export default router;

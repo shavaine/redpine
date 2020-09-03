@@ -67,7 +67,7 @@
                       dense
               ></v-text-field>
             </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" name="address" rules="required|max:15">
+            <ValidationProvider v-slot="{ errors }" name="address" rules="required|max:30">
               <v-text-field
                       v-model="address"
                       :error-messages="errors"
@@ -176,7 +176,7 @@
                     <template v-slot:activator="{ on, attrs }">
                       <v-text-field
                               v-model="checkOutDate"
-                              label="Check-In"
+                              label="Check-Out"
                               readonly
                               outlined
                               dense
@@ -230,6 +230,7 @@
 <script>
   import { required, email, max, digits } from "vee-validate/dist/rules";
   import {extend, ValidationObserver, ValidationProvider, setInteractionMode} from "vee-validate";
+  import db from "../db";
 
   setInteractionMode("eager");
 
@@ -284,6 +285,30 @@ export default {
     submit() {
       this.$refs.observer.validate();
       console.log(this.firstName, this.lastName, this.email, this.phone, this.address, this.city, this.postalCode, this.country, this.checkInDate, this.checkOutDate, this.adults, this.children, this.roomType);
+      db.collection("reservations").add({
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        phone: this.phone,
+        address: this.address,
+        city: this.city,
+        postalCode: this.postalCode,
+        country: this.country,
+        checkInDate: this.checkInDate,
+        checkOutDate: this.checkOutDate,
+        adults: this.adults,
+        children: this.children,
+        roomType: this.roomType,
+        status: "Not-Contacted",
+
+      })
+              .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+              })
+              .catch(function(error) {
+                console.error("Error adding document: ", error);
+              });
+
       this.firstName = "";
       this.lastName = "";
       this.email = "";
@@ -298,6 +323,9 @@ export default {
       this.children = false;
       this.roomType = false;
       this.$refs.observer.reset();
+
+      alert("Your Reservation Request has been sent");
+      this.$router.push("home")
     },
   }
 

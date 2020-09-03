@@ -23,9 +23,9 @@
       <v-btn class="d-none d-lg-flex d-xl-flex" text :color="tabcolor" to="/reservations">
         <span>Reserve</span>
       </v-btn>
-      <v-divider class="mx-2" vertical></v-divider>
 
-      <v-tooltip bottom>
+      <v-divider v-if="mobileM" class="mx-2" vertical></v-divider>
+      <v-tooltip v-if="mobileM" bottom>
         <template v-slot:activator="{ on, attrs }">
           <a href="mailto: reservations@redpineinn.com" >
           <v-icon v-bind="attrs" v-on="on" right :color="tabcolor">mdi-email</v-icon>
@@ -35,9 +35,9 @@
       </v-tooltip>
 
 
-      <v-divider class="mx-4 d-flex d-xl-none d-lg-none" vertical></v-divider>
-      <v-tooltip bottom>
-        <template v-slot:activator="{ on, attrs }">
+      <v-divider v-if="mobileS" class="mx-4 d-flex d-xl-none d-lg-none" vertical></v-divider>
+      <v-tooltip v-if="mobileS" bottom>
+        <template  v-slot:activator="{ on, attrs }">
           <a href="tel:7054354381" class="d-flex d-xl-none d-lg-none">
           <v-icon v-bind="attrs" v-on="on" right :color="tabcolor" class="mr-4">mdi-phone</v-icon>
           </a>
@@ -49,7 +49,6 @@
               :color="tabcolor"
               @click="drawer = !drawer"
               class="d-flex d-xl-none d-lg-none"
-              clipped-right
       ></v-app-bar-nav-icon>
     </v-app-bar>
 
@@ -86,9 +85,9 @@ export default {
   name: "navigation",
   data: () => ({
     drawer: false,
-    scrollPosition: null,
     navcolor: "grey lighten-3",
     tabcolor: "#7f0000",
+    windowWidth: window.innerWidth,
     links: [
       { icon: "mdi-home-city", text: "Home", route: "/" },
       { icon: "mdi-room-service", text: "Rooms", route: "/rooms" },
@@ -103,6 +102,19 @@ export default {
       { icon: "mdi-notebook", text: "Book Room", route: "/reservations" }
     ]
   }),
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+    })
+  },
+  computed: {
+    mobileS() {
+      return this.windowWidth >= 321
+    },
+    mobileM() {
+      return this.windowWidth >= 415
+    }
+  }
 };
 </script>
 
