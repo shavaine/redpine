@@ -1,5 +1,5 @@
 <template>
-  <v-app class="">
+  <v-app>
     <Navigation />
     <v-main>
       <router-view />
@@ -17,11 +17,6 @@ export default {
   components: {
     Navigation,
     Footer
-  },
-  watch: {
-    '$route' (to) {
-      document.title = to.meta.title || 'Red Pine Inn'
-    }
-  },
+  }
 };
 </script>

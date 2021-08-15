@@ -129,6 +129,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
   window.scrollTo(0, 0);
   // const currentUser = Firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);

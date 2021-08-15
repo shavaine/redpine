@@ -152,7 +152,7 @@
                   <v-select
                           v-model="adults"
                           :error-messages="errors"
-                          :items="numbers"
+                          :items="numbersA"
                           label="Adults"
                           required
                           outlined
@@ -193,7 +193,7 @@
                   <v-select
                           v-model="children"
                           :error-messages="errors"
-                          :items="numbers"
+                          :items="numbersC"
                           label="Children"
                           required
                           outlined
@@ -231,6 +231,7 @@
   import { required, email, max, digits } from "vee-validate/dist/rules";
   import {extend, ValidationObserver, ValidationProvider, setInteractionMode} from "vee-validate";
   import db from "../db";
+  import Firebase from "firebase";
 
   setInteractionMode("eager");
 
@@ -276,7 +277,8 @@ export default {
     adults: "",
     children: "",
     roomType: "",
-    numbers: ['1', '2', '3', '4'],
+    numbersA: ['1', '2', '3', '4'],
+    numbersC: ['0','1', '2', '3', '4'],
     roomTypes: ['One Double', 'Two Queens', 'Kitchenette']
 
   }),
@@ -300,7 +302,7 @@ export default {
         children: this.children,
         roomType: this.roomType,
         status: "Not-Contacted",
-
+        createdAt: Firebase.firestore.FieldValue.serverTimestamp()
       })
               .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);

@@ -75,7 +75,6 @@
                         label="Message"
                         required
                         outlined
-                        counter="50"
                 ></v-textarea>
               </ValidationProvider>
               <v-btn color="#b71c1c" class="text-center" dark rounded @click="submit">
