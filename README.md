@@ -1,24 +1,2 @@
-# redpine
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Red Pine Inn 
+A mock hotel website that's all about convenience and efficiency. Powered by Vue.js on the front-end and Firebase on the back-end, Red Pine Inn offers a seamless experience for admins to handle messages and reservation requests. With easy-to-use features, managing guest inquiries and bookings has never been easier.
